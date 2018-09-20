@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Feedback {% endblock %}
+{% block body %}
+<h1 class="text-center"> Write Feedback </h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group"><label>Satisfied with Teaching :</label><br>{{ form.satisfied }}<br></div>
+    <div class="form-group"><label>Voice Audibility :</label><br>{{ form.audibility }}<br></div>
+    <div class="form-group"><label>Clarity on the subject :</label><br>{{ form.clarity }}<br></div>
+    <div class="form-group"><label>Partiality towards students :</label><br>{{ form.partiality }}<br></div>
+    <div class="form-group"><label>Responsibility towards Homework :</label><br>{{ form.homework }}<br></div>
+    <div class="form-group"><label>Punctuality to Classes :</label><br>{{ form.punctuality }}<br></div>
+    <div class="form-group">
+        <label>Want to take another class from the same teacher :</label><br>{{ form.another_class}}<br>
+    </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">SUBMIT</button></p>
+</form>
+{% endblock %}
